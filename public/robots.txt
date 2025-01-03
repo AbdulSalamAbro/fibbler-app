@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://fibbler.co
+
+# Sitemaps
+Sitemap: https://fibbler.co/sitemap.xml

@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@font-face {
+  font-family: "satoshi-500";
+  src: url("/assets/font/satoshi/Fonts/OTF/Satoshi-Medium.otf") format("woff2");
+}
+@font-face {
+  font-family: "satoshi-regular";
+  src: url("/assets/font/satoshi/Fonts/OTF/Satoshi-Regular.otf") format("woff2");
+}
+@font-face {
+  font-family: "satoshi-thin";
+  src: url("/assets/font/satoshi/Fonts/OTF/Satoshi-Light.otf") format("woff2");
+}
+@font-face {
+  font-family: "Clash Display";
+  src: url("/assets/font/clash-display/Fonts/OTF/ClashDisplay-Medium.otf") format("woff2");
+}
+@font-face {
+  font-family: "Clash-bold";
+  src: url("/assets/font/clash-display/Fonts/OTF/ClashDisplay-Bold.otf") format("woff2");
+}
+.satoshi-thin {
+  font-family: "satoshi-thin", sans-serif !important;
+}
+.satoshi-regular {
+  font-family: "satoshi-regular", sans-serif !important;
+}
+.satoshifont-500 {
+  font-family: "satoshi-500", sans-serif !important;
+}
+
+.satoshifont-700 {
+  font-family: "satoshi-700", sans-serif !important;
+}
+
+.clash-bold {
+  font-family: "Clash-bold", sans-serif !important;
+}
+.inter-font {
+  font-family: "Inter", sans-serif !important;
+}
+body {
+  margin: 0;
+  background-color: #181127;
+  padding: 15px;
+  font-family: "Clash Display", sans-serif !important;
+  scroll-behavior: smooth !important;
+}
+* {
+  scroll-behavior: smooth !important;
+}
+main {
+  border-radius: 20px;
+  background-color: #e5e0f1;
+  border: 15px solid #c7bce1;
+}
+main .content {
+  background-image: url(/assets/img/bg.png) !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 12px;
+}
+.container {
+  max-width: 1360px !important;
+  padding: 0 48px !important;
+  margin: 0 auto;
+}
+@media all and (max-width: 575px) {
+  main .content {
+    background-image: url(/assets/img/mobile-bg.png) !important;
+  }
+  main {
+    border: 0px solid #c7bce1;
+  }
+}
+@media all and (max-width: 1024px) {
+  main .content {
+    background-image: url(/assets/img/tablet-bg.png) !important;
+  }
+  .container {
+    padding: 0 24px !important;
+  }
+}
+@media all and (max-width: 575px) {
+  body {
+    padding: 0;
+  }
+  main {
+    border-radius: 0;
+    padding: 0;
+  }
+  main .content {
+    border-radius: 0px;
+  }
+  .container {
+    padding: 0 12px !important;
+  }
+}
+
+.docs-dropdown .dropdown-element {
+  display: none;
+}
+
+.docs-dropdown:hover .dropdown-element {
+  display: block;
+}
+
+@media all and (max-width: 340px) {
+  .try-btn-340px {
+    font-size: 14px !important;
+  }
+  .try-btn-340px svg {
+    width: 28px !important;
+  }
+}
+
+@keyframes pulseEffect {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(251, 93, 165, 0.7);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 10px rgba(251, 93, 165, 0);
+  }
+}
+.pulse:hover {
+  animation: pulseEffect 1.5s infinite;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color:#181127
+}
+
+h2 {
+  font-size: 18px;
+  color: #181127;
+  letter-spacing: 0.2px;
+  line-height: 109.7%;
+  font-weight: 600; /* equivalent to 'font-semibold' in Tailwind */
+  margin-bottom: 15px;
+  margin-top: 15px;
+  color:#181127
+
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  color:#181127
+
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Lists */
+ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+ul li {
+  margin-left: 0.5rem;
+  
+}
+
+
+ol {
+  list-style-type: decimal;
+  margin-left: 20px;
+  color: #181127;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+li {
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+  color: #181127;
+}
+red-link{
+    color: #cf0b67; /* text-[#181127] */
+    font-size: 16px; /* text-[16px] */
+    font-weight: 500; /* font-[500] */
+    font-family: 'Satoshi', sans-serif; /* satoshifont-500 */
+    line-height: 28px; /* xl:leading-[28px] */
+}
+
+/* Paragraphs */
+p {
+  color: #181127;
+  font-size: 16px;
+  line-height: normal;
+  margin-top: 20px;
+  font-family: Clash Display;
+  font-weight: 500;
+}
+
+/* Strong (Bold Text) */
+strong {
+  font-weight: bold;
+  color: #181127;
+}
+
+/* Emphasis (Italic Text) */
+em {
+  font-style: italic;
+  color: #181127;
+}
+
+/* Blockquotes */
+blockquote {
+  font-size: 1rem;
+  font-style: italic;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid #ccc;
+  color: #555;
+}
+
+/* Code Blocks */
+pre {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+code {
+  background-color: #f4f4f4;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+}
+
+@media (min-width: 640px) { /* 'sm:' prefix in Tailwind */
+  h2 {
+    font-size: 20px;
+    color: #181127;
+  }
+}
+
+@media (min-width: 1024px) { /* 'lg:' prefix in Tailwind */
+  p {
+    font-size: 18px;
+    color: #181127;
+  }
+  ol {
+    font-size: 18px;
+    color: #181127;
+  }
+}
+
+@media (min-width: 1280px) { /* 'xl:' prefix in Tailwind */
+  p {
+    line-height: 28px;
+    color: #181127;
+  }
+  ol {
+    line-height: 28px;
+    color: #181127;
+  }
+}
