@@ -32,10 +32,19 @@ const MobileMenu: React.FC<MyComponentProps> = ({ setIsOpen }) => {
           <li>
             <Link
               onClick={() => setIsOpen(false)}
-              href="#crm-sync"
+              href="#zaps"
               className="flex gap-[10px] items-center text-[#fff] text-[16px] font-[500] satoshifont-500 leading-[138%] hover:gap-[20px] hover:pr-[28px]  transition-all duration-100 ease-in-out hover:text-[#FB5DA5] "
             >
               LinkedIn Ads CRM Sync <ArrowRight />
+            </Link>
+          </li>
+          <li>
+            <Link
+              onClick={() => setIsOpen(false)}
+              href="#zaps"
+              className="flex gap-[10px] items-center text-[#fff] text-[16px] font-[500] satoshifont-500 leading-[138%] hover:gap-[20px] hover:pr-[28px]  transition-all duration-100 ease-in-out hover:text-[#FB5DA5] "
+            >
+              LinkedIn Ads Webhooks <ArrowRight />
             </Link>
           </li>
           <li>
@@ -49,13 +58,13 @@ const MobileMenu: React.FC<MyComponentProps> = ({ setIsOpen }) => {
           </li>
         </ul>
       </div>
-      <a
+      <Link
         href="/#pricing"
         className="text-[31px] text-[#fff] uppercase font-[600] tracking-[1.55px] mb-[42px] block hover:text-[#FB5DA5] transition-all duration-300"
         onClick={() => setIsOpen(false)}
       >
         Pricing
-      </a>
+      </Link>
       <div className="mb-[66px]">
         <h3 className="text-[31px] text-[#fff] uppercase font-[600] tracking-[1.55px] ">
           RESOURCES

@@ -8,7 +8,8 @@ interface Image {
 interface Author {
   name: string;
   avatar: string;
-  jobTitle?: string; // Optional if not always available
+  jobTitle?: string;
+  author:any
 }
 
 interface Article {

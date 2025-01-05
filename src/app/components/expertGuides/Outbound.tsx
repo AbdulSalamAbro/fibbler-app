@@ -51,65 +51,68 @@ export default function Outbound() {
             </h2>
             <ul className="list-none text-[#181127] text-[16px] lg:text-[18px] font-[500] satoshifont-500 xl:leading-[28px]">
               <li className="mb-[10px]">
-                <a href="#context" className="underline hover:text-[#FB5DA5]">
+                <Link
+                  href="#context"
+                  className="underline hover:text-[#FB5DA5]"
+                >
                   Context
-                </a>
+                </Link>
               </li>
               <li className="mb-[10px]">
-                <a
+                <Link
                   href="#setting-up"
                   className="underline hover:text-[#FB5DA5]"
                 >
                   Setting Up LinkedIn Ads
-                </a>
+                </Link>
               </li>
               <li className="mb-[10px]">
-                <a
+                <Link
                   href="#fetching-data"
                   className="underline hover:text-[#FB5DA5]"
                 >
                   Fetching Engagement Data with Fibbler.co
-                </a>
+                </Link>
               </li>
               <li className="mb-[10px]">
-                <a
+                <Link
                   href="#creating-list"
                   className="underline hover:text-[#FB5DA5]"
                 >
                   Creating a List in HubSpot
-                </a>
+                </Link>
               </li>
               <li className="mb-[10px]">
-                <a
+                <Link
                   href="#sending-data"
                   className="underline hover:text-[#FB5DA5]"
                 >
                   Send data from HubSpot to Clay using Make.com
-                </a>
+                </Link>
               </li>
               <li className="mb-[10px]">
-                <a
+                <Link
                   href="#enriching-data"
                   className="underline hover:text-[#FB5DA5]"
                 >
                   Enriching and Filtering Data in Clay
-                </a>
+                </Link>
               </li>
               <li className="mb-[10px]">
-                <a
+                <Link
                   href="#reaching-out"
                   className="underline hover:text-[#FB5DA5]"
                 >
                   Reaching Out Through Email and LinkedIn
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#wrapping-up"
                   className="underline hover:text-[#FB5DA5]"
                 >
                   Wrapping It Up
-                </a>
+                </Link>
               </li>
             </ul>
           </section>

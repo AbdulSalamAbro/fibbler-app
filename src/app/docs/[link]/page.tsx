@@ -1,26 +1,33 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { Suspense } from 'react';
+import Loading from '@/app/components/Loading';
 import useFetch from "../../useFetch";
 import { useParams } from 'next/navigation';
 import Header from '@/app/components/common/Header/Header';
 import qs from "qs";
 import ReactMarkdown from "react-markdown";
 import '../../globals.css';
+import { TargetArrow } from '@/app/components/Icon';
 
-const PostPage = () => {
+const PostPageContent = () => {
   const query = qs.stringify(
     {
       populate: {
         blog: {
           populate: "*",
+        },
+        articles: {
+          populate: {
+            author: { populate: "*" }
+          }
         }
-      }
+      },
     },
     { encodeValuesOnly: true }
   );
 
-  const { data, error } = useFetch(`/api/docs?${query}`);
+  const { data, error} = useFetch(`/api/docs?${query}`);
   
   const { link } = useParams();
 
@@ -50,7 +57,7 @@ const PostPage = () => {
 
             {/* Article Introduction */}
             <p className="text-[#181127] text-[16px] lg:text-[18px] font-[500] satoshifont-500 xl:leading-[28px] text-center mx-auto max-w-[641px] italic mb-[35px]">
-              {currentArticle.blog.introduction ?? "Turning LinkedIn ad impressions and engagements into outbound leads..."}
+              {currentArticle?.blog.introduction ?? "Turning LinkedIn ad impressions and engagements into outbound leads..."}
             </p>
 
             {/* Quick Links Section */}
@@ -74,9 +81,9 @@ const PostPage = () => {
               <h2 className="text-[18px] sm:text-[20px] text-[#181127] tracking-[0.2px] leading-[109.7%] font-semibold mb-[15px]">
                 {currentArticle.blog.heading2 ?? "Overview"}
               </h2>
-              <p className="text-[#181127] text-[16px] lg:text-[18px] font-[500] satoshifont-500 xl:leading-[28px] pl-5">
-                <ReactMarkdown>{currentArticle.blog.section1}</ReactMarkdown>
-              </p>
+              <div className="text-[#181127] text-[16px] lg:text-[18px] font-[500] satoshifont-500 xl:leading-[28px] pl-5">
+                <ReactMarkdown className="mkd">{currentArticle.blog.section1}</ReactMarkdown>
+              </div>
             </section>
 
             {/* Fibbler in-app Company Insights Section */}
@@ -84,10 +91,10 @@ const PostPage = () => {
               <h3 id="company-insights" className="text-[18px] sm:text-[20px] text-[#181127] tracking-[0.2px] leading-[109.7%] font-semibold mb-[15px]">
                 {currentArticle.blog.heading3 ?? "Fibbler in-app Company Insights"}
               </h3>
-              <ReactMarkdown className="pl-5">{currentArticle.blog.section2}</ReactMarkdown>
+              <ReactMarkdown className="pl-5 mkd">{currentArticle.blog.section2}</ReactMarkdown>
               <div className="rounded-[16px] border-[4px] sm:border-[5px] border-[#181127] bg-[#fcfbfd] max-w-[899px] aspect-[2/1] mx-auto my-[30px] sm:my-[40px] lg:my-[81px]">
                 <img
-                  src={`${currentArticle.blog.image1[0].url}` || "/assets/img/docs/insights_tech_docs.png"}
+                  src={`${currentArticle.blog.image1[0].url}` ? `${currentArticle.blog.image1?.[0].url}` :"/assets/img/docs/insights_tech_docs.png"}
                   alt="How insights works"
                   className="w-full h-full object-contain rounded-[16px]"
                 />
@@ -100,17 +107,17 @@ const PostPage = () => {
                 {currentArticle.blog.heading4 ?? "Fibbler CRM Data Sync"}
               </h3>
               <ol className="list-decimal ml-[20px] text-[#181127] text-[16px] lg:text-[18px] font-[500] satoshifont-500 xl:leading-[28px]">
-                <ReactMarkdown>{currentArticle.blog.section3_part1}</ReactMarkdown>
+                <ReactMarkdown className="mkd">{currentArticle.blog.section3_part1}</ReactMarkdown>
               </ol>
               <div className="rounded-[16px] border-[4px] sm:border-[5px] border-[#181127] bg-[#fcfbfd] max-w-[899px] aspect-[2/1] mx-auto my-[30px] sm:my-[40px] lg:my-[81px]">
                 <img
-                  src={`${currentArticle?.blog.image2[0].url}` || "/assets/img/docs/datasync_tech_docs.png"}
+                  src={`${ currentArticle?.blog.image2?.[0]?.url}` || "/assets/img/docs/datasync_tech_docs.png"}
                   alt="Graph on how to connect our datasource sync"
                   className="w-full h-full object-contain rounded-[16px]"
                 />
               </div>
               <div className='pl-5'>
-                <ReactMarkdown>{currentArticle.blog.section3_part2}</ReactMarkdown>
+                <ReactMarkdown className="mkd">{currentArticle.blog.section3_part2}</ReactMarkdown>
               </div>
             </section>
 
@@ -119,7 +126,7 @@ const PostPage = () => {
               <h2 className="text-[18px] sm:text-[20px] text-[#181127] tracking-[0.2px] leading-[109.7%] font-semibold mb-[15px]">
                 {currentArticle.blog.heading5 ?? "Permissions Required"}
               </h2>
-              <ReactMarkdown className="pl-5">{currentArticle.blog.section4}</ReactMarkdown>
+              <ReactMarkdown className="pl-5 mkd">{currentArticle.blog.section4}</ReactMarkdown>
             </section>
 
             {/* Contact Us Section */}
@@ -131,13 +138,49 @@ const PostPage = () => {
                 </a>
                 .
               </p>
+                 {/* Author section at the bottom */}
+           <div className="max-w-[763px] mx-auto xl:py-[172px] py-[60px] sm:py-[100px] ml-10 ">
+                    <div>
+                      <h5 className="text-[18px] sm:text-[20px] text-[#181127] tracking-[0.2px] leading-[109.7%] flex gap-[10px]">
+                        Written by
+                        <div className="mt-[10px] rotate-[-47.833deg]">
+                          <TargetArrow />
+                        </div>
+                      </h5>
+        
+                      <div className="mt-[15px] flex gap-[12px] items-center">
+                        <img
+                          src={currentArticle?.articles?.author?.avatar[0].url}
+                          alt={`${currentArticle?.articles?.author.name} avatar`}
+                          className="border-[2px] border-[#fff] rounded-[100%] w-[48px] h-[48px]"
+
+                        />
+                        <div className="flex flex-col gap-[3px]">
+                          <h6 className="text-[#111827] font-[700] text-[16px]">
+                          {currentArticle?.articles?.author.name}
+                          </h6>
+                          <p className="text-[#111827] satoshifont-500 font-[500] text-[14px]">
+                          {currentArticle?.articles?.author.jobTitle}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </section>
 
           </div>
+        
         </section>
+         
       </main>
     </div>
   );
 };
-
+const PostPage = () => {
+  return (
+    <Suspense fallback={<Loading />}>
+      <PostPageContent />
+    </Suspense>
+  );
+};
 export default PostPage;

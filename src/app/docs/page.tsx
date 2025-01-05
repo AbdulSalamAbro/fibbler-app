@@ -42,7 +42,7 @@ export default function DocsOverview() {
             {Array.isArray(data) && data.length > 0 ? (
               data.map((item: any, index: number) => {
                 const articleLink = item.link ? `/docs/${item.link}` : "/docs/default";
-                const article = item.articles; // Access the articles object
+                const article = item.articles;
                 return (
                   <article
                     key={index}
@@ -70,7 +70,7 @@ export default function DocsOverview() {
                       <div className="flex items-center space-x-4">
                         <img
                           className="w-7 h-7 rounded-full"
-                          src={ article.author.avatar[0].url}
+                          src={ article.author.avatar?.[0]?.url || "/assets/img/adamhartsner.jpeg"}
                           alt={`${article.author.name} avatar`}
                         />
                         <span className="font-medium text-[#181127]">{article.author.name}</span>

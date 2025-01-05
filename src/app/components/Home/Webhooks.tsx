@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Webhooks() {
   return (
     <section
-      id="crm-sync"
+      id="zaps"
       className="mb-[66px] sm:mb-[99px] xl:mb-[209px] overflow-hidden"
     >
       <div className="container">

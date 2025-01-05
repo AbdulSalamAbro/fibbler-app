@@ -40,6 +40,12 @@ export default function Faq() {
       ],
     },
     {
+      question: "Do you support webhooks other than Clay?",
+      answer: [
+        "Yes! You can send LinkedIn Ads data to any tool you can think of, whether it's Zapier, Make, Smartlead, Heyreach, or others. However, we’re actively supporting only Clay, which means we guarantee that it works at all times.",
+      ],
+    },
+    {
       question: "How does billing work? Which payment methods do you support?",
       answer: [
         "Whether you choose monthly or annual subscriptions, we will send you a subscription invoice via Stripe.",

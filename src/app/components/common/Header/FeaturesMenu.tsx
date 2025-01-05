@@ -25,10 +25,18 @@ export default function FeaturesMenu() {
             </li>
             <li>
               <Link
-                href="/#crm-sync"
+                href="/#zaps"
                 className="flex gap-[10px] items-center text-[#fff] text-[16px] font-[500] satoshifont-500 leading-[138%] hover:text-[#FB5DA5] transition-all duration-300"
               >
                 LinkedIn Ads CRM Sync <ArrowRight />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/#zaps"
+                className="flex gap-[10px] items-center text-[#fff] text-[16px] font-[500] satoshifont-500 leading-[138%] hover:text-[#FB5DA5] transition-all duration-300"
+              >
+                LinkedIn Ads Webhooks <ArrowRight />
               </Link>
             </li>
             <li>

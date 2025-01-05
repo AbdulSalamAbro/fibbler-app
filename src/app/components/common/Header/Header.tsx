@@ -33,12 +33,12 @@ export default function Header() {
                   <FeaturesMenu />
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/#pricing"
                     className="text-white text-[18px] leading-normal font-[600] uppercase tracking-[0.9px] hover:text-[#FB5DA5] transition-all duration-300"
                   >
                     Pricing
-                  </a>
+                  </Link>
                 </li>
 
                 <li>

@@ -57,51 +57,51 @@ export default function Guides() {
             </h2>
             <ul className="list-none text-[#181127] text-[16px] lg:text-[18px] font-[500] satoshifont-500 xl:leading-[28px]">
               <li className="mb-[10px]">
-                <a
+                <Link
                   href="#getting-started"
                   className="underline hover:text-[#FB5DA5]"
                 >
                   Getting Started
-                </a>
+                </Link>
               </li>
               <li className="mb-[10px]">
-                <a href="#step-1" className="underline hover:text-[#FB5DA5]">
+                <Link href="#step-1" className="underline hover:text-[#FB5DA5]">
                   Step 1 - Fibbler CRM sync
-                </a>
+                </Link>
               </li>
               <li className="mb-[10px]">
-                <a href="#step-2" className="underline hover:text-[#FB5DA5]">
+                <Link href="#step-2" className="underline hover:text-[#FB5DA5]">
                   Step 2 - Signals custom object
-                </a>
+                </Link>
               </li>
               <li className="mb-[10px]">
-                <a href="#step-3" className="underline hover:text-[#FB5DA5]">
+                <Link href="#step-3" className="underline hover:text-[#FB5DA5]">
                   Step 3 - LinkedIn ad signal workflow
-                </a>
+                </Link>
               </li>
               <li className="mb-[10px]">
-                <a href="#step-4" className="underline hover:text-[#FB5DA5]">
+                <Link href="#step-4" className="underline hover:text-[#FB5DA5]">
                   Step 4 - Setting up contact and company level views
-                </a>
+                </Link>
               </li>
               <li className="mb-[10px]">
-                <a href="#step-5" className="underline hover:text-[#FB5DA5]">
+                <Link href="#step-5" className="underline hover:text-[#FB5DA5]">
                   Step 5 - Building scoring and notifications from signals and
                   the Fibbler properties
-                </a>
+                </Link>
               </li>
               <li className="mb-[10px]">
-                <a href="#step-6" className="underline hover:text-[#FB5DA5]">
+                <Link href="#step-6" className="underline hover:text-[#FB5DA5]">
                   Step 6 - Signal-based reporting
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#final-notes"
                   className="underline hover:text-[#FB5DA5]"
                 >
                   Final Notes
-                </a>
+                </Link>
               </li>
             </ul>
           </section>

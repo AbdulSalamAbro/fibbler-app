@@ -25,12 +25,12 @@ export default function Footer() {
           </div>
           <div className="flex gap-y-[37px] items-start justify-between mt-[25px] flex-wrap lg:flex-nowrap">
             <div className="flex sm:gap-[7px] gap-[4px] items-center flex-wrap sm:flex-nowrap">
-              <a
+              <Link
                 className="rotate-[1deg] text-[14px] xl:text-[20px] font-[700] text-[#000] sm:px-[24px] px-[10px] sm:py-[16px] py-[7px] bg-[#fcfbfd] rounded-[5px] hover:text-[#FB5DA5] transition-all duration-300"
                 href="/#pricing"
               >
                 Pricing
-              </a>
+              </Link>
               <Link
                 className="rotate-[1deg] text-[14px] xl:text-[20px] font-[700] text-[#000] sm:px-[24px] px-[10px] sm:py-[16px] py-[7px] bg-[#fcfbfd] rounded-[5px] whitespace-nowrap hover:text-[#FB5DA5] transition-all duration-300"
                 href="/docs"

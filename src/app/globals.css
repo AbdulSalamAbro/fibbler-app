@@ -134,6 +134,7 @@ main .content {
   animation: pulseEffect 1.5s infinite;
 }
 
+
 h1 {
   font-size: 2rem;
   font-weight: bold;
@@ -269,7 +270,10 @@ code {
   border-radius: 0.25rem;
   font-family: monospace;
 }
-
+.mkd a {
+  color: #FB5DA5;
+  text-decoration: underline;
+}
 @media (min-width: 640px) { /* 'sm:' prefix in Tailwind */
   h2 {
     font-size: 20px;
