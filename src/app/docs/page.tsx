@@ -21,7 +21,7 @@ const calculateDaysAgo = (publishedDate: string): number => {
 };
 
 export default function DocsOverview() {
-  const { data, baseUrl } = useFetch("/api/docs?populate=articles.author.avatar");
+  const { data, baseUrl } = useFetch("/api/blogs?populate=articles.author.avatar");
 
   return (
     <main>

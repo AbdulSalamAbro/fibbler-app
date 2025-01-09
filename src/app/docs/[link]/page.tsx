@@ -27,7 +27,7 @@ const PostPageContent = () => {
     { encodeValuesOnly: true }
   );
 
-  const { data, error} = useFetch(`/api/docs?${query}`);
+  const { data, error} = useFetch(`/api/blogs?${query}`);
   
   const { link } = useParams();
 
